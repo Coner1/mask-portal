@@ -1,0 +1,85 @@
+/**** Colours ****/
+$color-primary: #191919;
+$color-secondary: #4C4C4C;
+$color-sub: #7a7a7a;
+
+$color-orange: #db5918;
+
+$color-bg: #FCFCFC;
+$color-border: #E5E5E5;
+$color-border-dark: $color-sub;
+
+$color-gray: #EFEFEF;
+$color-gray-more: #E6E6E6;
+
+$color-link: #5e93c5;
+$color-error: #dc2c7b;
+$color-success: green;
+$color-info: #7dc1f9;
+
+/**** Fonts *****/
+$font-primary: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-secondary: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-serif: "Noto Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+
+$font-size: 14px;
+
+$box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px;
+
+/* Breakpoints */
+$grid-breakpoints: (
+  xs: 500px,
+  sm: 639px,
+  md: 767px,
+  lg: 959px,
+  xl: 1023px,
+) !default;
+
+@mixin breakpoint-down($breakpoint) {
+  @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-up($breakpoint) {
+  @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+/* Helpers */
+@mixin orange-button{
+  background-color: #FFF;
+  color: $color-orange;
+  border: 1px solid $color-orange;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 14px;
+  line-height: 30px;
+  height: 32px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-orange;
+    color: #fff;
+  }
+}
+
+@mixin disabled-button{
+  color: $color-sub;
+  background-color: $color-gray;
+  border: 1px solid $color-gray;
+  cursor: not-allowed;
+}
+
+@mixin card{
+  background-color: #FFF;
+  border: 1px solid $color-border;
+  padding: 18px;
+  margin-bottom: 15px;
+  position: relative;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}

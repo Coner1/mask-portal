@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans:wght@400;700&display=swap");
+/**** Colours ****/
+/**** Fonts *****/
+/* Breakpoints */
+/* Helpers */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  color: #191919;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FCFCFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+}
+
+/**** Colours ****/
+/**** Fonts *****/
+/* Breakpoints */
+/* Helpers */
+.universe {
+  min-height: 100vh;
+  background-color: #FCFCFC;
+  color: #191919;
+  display: flex;
+}
+
+.main {
+  padding-top: 72px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 1024px;
+  padding: 0 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+@media (max-width: 1023px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (max-width: 959px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.left {
+  width: 250px;
+  display: flex;
+}
+
+.center {
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  width: 200px;
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+
+.home h1 {
+  font-size: 24px;
+}
+.home .intro {
+  line-height: 1.8;
+}
+
+.header {
+  background-color: #FFF;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.header .headerContainer {
+  height: 52px;
+  align-items: center;
+}
+@media (max-width: 959px) {
+  .header .headerContainer {
+    padding-left: 5px;
+  }
+}
+@media (max-width: 500px) {
+  .header .headerContainer {
+    padding-left: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .header .headerContainer .center {
+    display: none;
+  }
+}
+.header .barIcon {
+  align-self: center;
+  margin: 10px 10px 10px 5px;
+  display: none;
+}
+@media (max-width: 500px) {
+  .header .barIcon {
+    display: block;
+  }
+}
+.header .homeLink {
+  display: flex;
+  user-select: none;
+}
+.header .logo {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+}
+.header .name {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
+}
+@media (max-width: 639px) {
+  .header .name {
+    font-size: 16px;
+  }
+}
+.header .write {
+  width: 100px;
+  flex: 0 0 100px;
+  margin-left: 14px;
+  background-color: #FFF;
+  color: #db5918;
+  border: 1px solid #db5918;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 14px;
+  line-height: 30px;
+  height: 32px;
+  cursor: pointer;
+}
+.header .write:hover {
+  background-color: #db5918;
+  color: #fff;
+}
+.header .write a {
+  display: block;
+}
+
+.button {
+  background-color: #FFF;
+  color: #db5918;
+  border: 1px solid #db5918;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 14px;
+  line-height: 30px;
+  height: 32px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+.button:hover {
+  background-color: #db5918;
+  color: #fff;
+}
+
+.legal {
+  background-color: #FFF;
+  border: 1px solid #E5E5E5;
+  padding: 18px;
+  margin-bottom: 15px;
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  max-width: 580px;
+}
+.legal:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+}
+.legal .notice {
+  color: #7a7a7a;
+}
+.legal .title {
+  font-size: 20px;
+}
+
+.home {
+  width: 600px;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq {
+  width: 600px;
+  margin: 0 auto;
+}
+.faq .title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.faq .item {
+  background-color: #FFF;
+  border: 1px solid #E5E5E5;
+  padding: 18px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.faq .item:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+}
+.faq .item .faq-q {
+  color: #4C4C4C;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.faq .item .faq-a {
+  display: none;
+  color: #7a7a7a;
+}
+.faq .item .subtitle {
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 20px;
+}
+.footer .container {
+  border-top: 1px solid #E5E5E5;
+  padding: 10px;
+}
+.footer .links a {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-right: 6px;
+}
+
+/*# sourceMappingURL=styles.css.map */

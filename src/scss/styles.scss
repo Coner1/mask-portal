@@ -1,0 +1,148 @@
+@import './globals.scss';
+@import './helpers.scss';
+@import './layout.scss';
+
+.header{
+  background-color: #FFF;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .headerContainer {
+    height: 52px;
+    align-items: center;
+
+    @include breakpoint-down(lg) {
+      padding-left: 5px;
+    }
+
+    @include breakpoint-down(xs) {
+      padding-left: 10px;
+    }
+
+    .center{
+      @include breakpoint-down(xs){
+        display: none;
+      }
+    }
+  }
+
+  .barIcon {
+    align-self: center;
+    margin: 10px 10px 10px 5px;
+    display: none;
+
+    @include breakpoint-down(xs) {
+      display: block;
+    }
+  }
+
+  .homeLink {
+    display: flex;
+    user-select: none;
+  }
+
+  .logo {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+
+    @include breakpoint-down(sm) {
+      font-size: 16px;
+    }
+  }
+
+  .write {
+    width: 100px;
+    flex: 0 0 100px;
+    margin-left: 14px;
+    @include orange-button;
+
+    a {
+      display: block;
+    }
+  }
+}
+
+.button{
+  @include orange-button;
+  padding: 6px 10px;
+}
+
+.legal {
+  @include card;
+  margin: 0 auto;
+  width: 600px;
+  max-width: 580px;
+
+  .notice{
+    color: $color-sub;
+  }
+
+  .title{
+    font-size: 20px;
+  }
+}
+
+.home{
+  width: 600px;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq{
+  width: 600px;
+  margin: 0 auto;
+
+  .title{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .item{
+    @include card;
+
+    .faq-q{
+      color: $color-secondary;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .faq-a{
+      display: none;
+      color: $color-sub;
+    }
+
+    .subtitle{
+      font-weight: bold;
+    }
+  }
+}
+
+.footer{
+
+  margin-top: 20px;
+
+  .container{
+    border-top: 1px solid $color-border;
+    padding: 10px;
+  }
+
+  .links{
+    a{
+      font-size: 12px;
+      color: $color-sub;
+      margin-right: 6px;
+    }
+  }
+}
