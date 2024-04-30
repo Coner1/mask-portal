@@ -35,8 +35,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          echo "$(cat ~/.ssh/id_rsa)"
-          # ssh -o StrictHostKeyChecking=no root@139.196.78.171
+          ssh -o StrictHostKeyChecking=no root@139.196.78.171
 
       - name: "Say Hello Mona it's Monday"
         env:
