@@ -5,9 +5,10 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  build&deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,3 +27,12 @@ jobs:
       run: |
         npm install
         npx webpack
+        
+    - name: Deploy to server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh -o StrictHostKeyChecking=no app@139.196.78.171 'bash -s' < deploy.sh
