@@ -36,4 +36,4 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           touch ~/1.txt
-          scp -T -o StrictHostKeyChecking=no root@139.196.78.171:~/1.txt /home/app
+          scp -T -o StrictHostKeyChecking=no ~/1.txt root@139.196.78.171:/home/app
