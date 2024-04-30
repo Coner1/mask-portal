@@ -37,3 +37,9 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           echo "$(cat ~/.ssh/id_rsa)"
           # ssh -o StrictHostKeyChecking=no root@139.196.78.171
+
+      - name: "Say Hello Mona it's Monday"
+        env:
+          Greeting: Hello
+          DAY_OF_WEEK: 21
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
