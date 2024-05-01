@@ -29,7 +29,7 @@ jobs:
           npm run build
 
       - name: Zip output
-        run: zip -r dist.zip dist
+        run: tar -czf dist.tar.gz dist
 
       - name: Deploy to server
         env:
