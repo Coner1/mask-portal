@@ -26,7 +26,10 @@ jobs:
       - name: Build
         run: |
           npm install
-          npx webpack
+          npm run build
+
+      - name: Zip output
+        run: zip -r dist.zip dist
 
       - name: Deploy to server
         env:
@@ -36,4 +39,4 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           touch ~/1.txt
-          scp -T -o StrictHostKeyChecking=no ~/1.txt root@139.196.78.171:/home/app
+          scp -T -o StrictHostKeyChecking=no ./dist.zip root@139.196.78.171:/home/app
