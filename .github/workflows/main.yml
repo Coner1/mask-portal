@@ -31,12 +31,13 @@ jobs:
       - name: Zip output
         run: tar -czf dist.tar.gz dist
 
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
       - name: Deploy to server
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           touch ~/1.txt
-          scp -T -o StrictHostKeyChecking=no ./dist.tar.gz root@139.196.78.171:/home/app
+          sshpass -p ${{ secrets.SCP_PASSWORD }} scp -T -o StrictHostKeyChecking=no ./dist.tar.gz app@139.196.78.171:/home/app
