@@ -13,3 +13,10 @@ npm run build
 ```
 
 to bundle your application
+
+
+## deploy
+
+```
+scp dist.zip app@139.196.78.171:/home/app/mask-portal
+```
