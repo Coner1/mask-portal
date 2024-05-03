@@ -39,7 +39,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          touch ~/1.txt
           sshpass -p ${{ secrets.SCP_PASSWORD }} scp -T -o StrictHostKeyChecking=no ./dist.tar.gz app@139.196.78.171:/home/app/mask-portal
 
       - name: Unzip package
