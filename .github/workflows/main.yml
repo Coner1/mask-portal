@@ -40,4 +40,7 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           touch ~/1.txt
-          sshpass -p ${{ secrets.SCP_PASSWORD }} scp -T -o StrictHostKeyChecking=no ./dist.tar.gz app@139.196.78.171:/home/app
+          sshpass -p ${{ secrets.SCP_PASSWORD }} scp -T -o StrictHostKeyChecking=no ./dist.tar.gz app@139.196.78.171:/home/app/mask-portal
+
+      - name: Unzip package
+        run: sshpass -p ${{ secrets.SCP_PASSWORD }} ssh -o StrictHostKeyChecking=no app@139.196.78.171 "rm -rf /home/app/mask-portal/dist | tar -xvf /home/app/mask-portal/dist.tar.gz | mv /home/app/mask-portal/dist.tar.gz  /home/app/mask-portal/history/dist_$(date +"%Y-%m-%d_%H-%M-%S").tar.gz"
